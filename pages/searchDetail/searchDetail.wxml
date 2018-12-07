@@ -4,21 +4,21 @@
 <!--列表渲染  -->
 <block wx:for="{{dataList}}" wx:key="item">
   <view class='item-container'>
-    <navigator url='/pages/article/article?linkUrl={{item.linkUrl}}'>
+    <navigator url='/pages/article/article?linkUrl={{item[0].linkUrl}}'>
       <button size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="goToArticle" hover-class="other-button-hover">
-        <text class='item-title'> {{item.title}} </text> </button>
+        <text class='item-title'> {{item[0].title}} </text> </button>
     </navigator>
 
     <view class='item-message'>
-      <text class="item-platform">{{item.platform}}</text>
+      <text class="item-platform">{{item[0].platform}}</text>
       <text decode="{{true}}" >&nbsp;</text>
-      <text class='item-author'>{{item.author}}</text>
+      <text class='item-author'>{{item[0].author}}</text>
       <text decode="{{true}}" >&nbsp;</text>
-      <text class='item-date'>{{item.date}}</text>
+      <text class='item-date'>{{item[0].date}}</text>
     </view>
 
     <view>
-      <text class='item-content'>{{item.content}}</text>
+      <template is="wxParse" data="{{wxParseData:item}}"/> 
     </view>
 
 

@@ -78,7 +78,29 @@ Page({
       data: {},
       method: 'GET', 
       success: function (res) {
-        that.setData({ dataList: res.data.data });
+        // that.setData({ dataList: res.data.data });
+        var strJson = res.data.data;
+        //解析html
+        let listRes = strJson; //要解析的数据
+        for (let i = 0; i < listRes.length; i++) {
+          WxParse.wxParse('topic' + i, 'html', listRes[i]['content'], that);
+
+          if (i === listRes.length - 1) {
+            WxParse.wxParseTemArray("listArr", 'topic', listRes.length, that)
+          }
+        }
+
+        let list = that.data.listArr;
+        list.map((item, index, arr) => {
+          arr[index][0].platform = listRes[index]['platform'];
+          arr[index][0].title = listRes[index]['title'];
+          arr[index][0].author = listRes[index]['author'];
+          arr[index][0].date = listRes[index]['date'];
+          arr[index][0].linkUrl = listRes[index]['linkUrl'];
+        });
+        that.setData({
+          dataList: list
+        })
       },
       fail: function () {
         // fail
