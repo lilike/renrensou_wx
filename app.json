@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/searchDetail/searchDetail",
+    "pages/likesou/likesou",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/article/article"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "人人搜",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/likesou/likesou",
+        "text": "理可搜",
+        "iconPath": "image/icon_API.png",
+        "selectedIconPath": "image/icon_API_HL.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "个人中心",
+        "iconPath": "image/icon_API.png",
+        "selectedIconPath": "image/icon_API_HL.png"
+      }
+    ]
+  }
+}

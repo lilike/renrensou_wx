@@ -1,0 +1,23 @@
+
+<form bindsubmit="formSubmit" >
+<view class="form-control h50">
+  <input name="keyword" placeholder="你能搜到什么" auto-focus/>
+</view>
+
+
+<view class='sousuo'>
+  <button form-type="submit" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" > 点击搜索 </button>
+</view>
+
+</form>
+
+<view class='title'>
+  <text>你会搜索到什么？</text>
+</view>
+<view class='tips'>
+  <text>差无知公众号所有文章
+        理可简书中的所有文章
+  </text>
+
+</view>
